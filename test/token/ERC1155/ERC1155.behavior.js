@@ -3,7 +3,7 @@ const { ZERO_ADDRESS } = constants;
 
 const { expect } = require('chai');
 
-const { shouldSupportInterfaces } = require('../../introspection/SupportsInterface.behavior');
+const { shouldSupportInterfaces } = require('../../utils/introspection/SupportsInterface.behavior');
 
 const ERC1155ReceiverMock = artifacts.require('ERC1155ReceiverMock');
 
@@ -106,7 +106,7 @@ function shouldBehaveLikeERC1155 ([minter, firstTokenHolder, secondTokenHolder, 
             [firstTokenHolder, secondTokenHolder, ZERO_ADDRESS],
             [firstTokenId, secondTokenId, unknownTokenId],
           ),
-          'ERC1155: batch balance query for the zero address',
+          'ERC1155: balance query for the zero address',
         );
       });
 
